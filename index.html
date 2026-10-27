@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti, Mi Amor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Fondo de estrellas romántico */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #0a0c27, #1a1642, #3b1d52, #5a235c);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Estrellas de fondo usando pseudo-elementos */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Tipografía romántica */
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Animación de aparición al hacer scroll (Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1.2s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Contenedor de las fotos */
+        .photo-frame {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 105, 180, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .photo-frame:hover {
+            transform: scale(1.02);
+        }
+        .photo-frame img {
+            border-radius: 12px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 4/5; /* Proporción agradable para móvil */
+            background-color: #2a2a4a; /* Color de fondo mientras carga la imagen */
+        }
+
+        /* Corazón latiente final */
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+            cursor: pointer;
+            filter: drop-shadow(0 0 20px rgba(255, 0, 100, 0.6));
+            transition: transform 0.1s;
+        }
+        .heart-beat:active {
+            transform: scale(0.9) !important;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.15); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.15); }
+            70% { transform: scale(1); }
+        }
+
+        /* Corazones flotantes interactivos */
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            font-size: 24px;
+            z-index: 50;
+            animation: floatUp 2s ease-out forwards;
+            opacity: 1;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.5) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-150px) scale(1.5) rotate(30deg);
+                opacity: 0;
+            }
+        }
+
+        /* Espaciado de las secciones para dar respiro */
+        .story-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Capa de estrellas de fondo generada por JS -->
+    <div class="stars" id="star-container"></div>
+
+    <main class="w-full max-w-4xl mx-auto px-4 py-10 relative z-10">
+        
+        <!-- Título Inicial -->
+        <div class="story-section reveal active">
+            <h1 class="text-5xl md:text-7xl font-cursive text-pink-300 text-center mb-4 text-shadow">Para mi persona favorita</h1>
+            <p class="text-xl md:text-2xl text-center text-gray-200 mt-4">Desliza hacia abajo ❤️</p>
+            <div class="animate-bounce mt-10">
+                <svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </div>
+
+        <!-- Sección 1 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-pink-200 mb-8 max-w-2xl leading-relaxed">
+                "Todo comenzó como un sueño, mirando las estrellas..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd1.jpeg" alt="Tú y yo por siempre">
+        </section>
+
+        <!-- Sección 2 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-purple-200 mb-8 max-w-2xl leading-relaxed">
+                "Y ahora, sin importar la hora del día..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd2.jpeg" alt="Te pienso 24/7">
+        </section>
+
+        <!-- Sección 3 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-pink-200 mb-8 max-w-2xl leading-relaxed">
+                "Cada noche te conviertes en mi mayor anhelo..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd3.jpeg" alt="11:11">
+        </section>
+
+        <!-- Sección 4 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-red-200 mb-8 max-w-2xl leading-relaxed">
+                "Entre tanta gente, mis ojos solo te buscan a ti..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd4.jpeg" alt="Mi miopía">
+        </section>
+
+        <!-- Sección 5 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-indigo-200 mb-8 max-w-2xl leading-relaxed">
+                "Porque sé que eres un ser único..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd5.jpeg" alt="Nadie como tú">
+        </section>
+
+        <!-- Sección 6 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-fuchsia-200 mb-8 max-w-2xl leading-relaxed">
+                "Sueño con todas las cosas que haremos..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd6.jpeg" alt="Quiero mil aventuras">
+        </section>
+
+        <!-- Sección 7 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-rose-200 mb-8 max-w-2xl leading-relaxed">
+                "Paso a paso, a tu lado..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd7.jpeg" alt="Mundo contigo">
+        </section>
+
+        <!-- Sección 8 -->
+        <section class="story-section reveal">
+            <p class="text-2xl md:text-4xl font-cursive text-center text-pink-300 mb-8 max-w-2xl leading-relaxed">
+                "Porque en todo el universo..."
+            </p>
+            <div class="photo-frame">
+            <img src="image_ab5cd8.jpeg" alt="No existe nadie como tú">
+        </section>
+
+        <!-- Gran Final -->
+        <section class="story-section reveal min-h-screen flex flex-col justify-center items-center pb-20">
+            <h1 class="text-7xl md:text-9xl font-cursive text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-600 mb-12 text-center" style="filter: drop-shadow(0 4px 15px rgba(255,100,150,0.4));">
+                Te Amo
+            </h1>
+            
+            <p class="text-lg md:text-xl text-pink-200 mb-6 text-center font-light">Toca el corazón</p>
+            
+            <!-- Corazón Interactivo -->
+            <div id="interactive-heart" class="heart-beat relative flex justify-center items-center select-none touch-manipulation w-40 h-40 md:w-56 md:h-56">
+                <svg viewBox="0 0 32 29.6" class="w-full h-full text-red-500 fill-current drop-shadow-2xl">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                </svg>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Lógica para crear estrellas de fondo aleatorias
+        function createStars() {
+            const container = document.getElementById('star-container');
+            const numStars = 100;
+            
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.style.position = 'absolute';
+                star.style.backgroundColor = 'white';
+                star.style.borderRadius = '50%';
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 2 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                
+                // Posición aleatoria
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                
+                // Opacidad y brillo aleatorio
+                star.style.opacity = Math.random() * 0.8 + 0.2;
+                
+                // Animación de parpadeo simple
+                const duration = Math.random() * 3 + 2;
+                star.style.animation = `pulse ${duration}s infinite alternate`;
+                
+                container.appendChild(star);
+            }
+        }
+
+        // Observador de intersección para animar elementos al hacer scroll
+        function setupIntersectionObserver() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.2 // Se activa cuando el 20% del elemento es visible
+            });
+
+            reveals.forEach(reveal => {
+                observer.observe(reveal);
+            });
+        }
+
+        // Lógica para el corazón interactivo
+        function setupInteractiveHeart() {
+            const mainHeart = document.getElementById('interactive-heart');
+            const emojis = ['❤️', '💖', '✨', '💕', '🥰'];
+
+            mainHeart.addEventListener('click', (e) => {
+                // Obtener posición del clic (o centro del corazón si es touch/teclado)
+                const rect = mainHeart.getBoundingClientRect();
+                const x = e.clientX || (rect.left + rect.width / 2);
+                const y = e.clientY || (rect.top + rect.height / 2);
+
+                // Crear de 5 a 8 corazoncitos por clic
+                const particlesCount = Math.floor(Math.random() * 4) + 5;
+
+                for (let i = 0; i < particlesCount; i++) {
+                    createFloatingParticle(x, y, emojis);
+                }
+            });
+        }
+
+        function createFloatingParticle(x, y, emojis) {
+            const particle = document.createElement('div');
+            particle.className = 'floating-heart';
+            
+            // Emoji aleatorio
+            particle.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Dispersión inicial aleatoria alrededor del clic
+            const offsetX = (Math.random() - 0.5) * 60;
+            const offsetY = (Math.random() - 0.5) * 60;
+            
+            particle.style.left = (x + offsetX) + 'px';
+            particle.style.top = (y + offsetY) + 'px';
+            
+            document.body.appendChild(particle);
+            
+            // Eliminar elemento después de que termine la animación (2 segundos)
+            setTimeout(() => {
+                particle.remove();
+            }, 2000);
+        }
+
+        // Agregar animación de parpadeo a los estilos dinámicamente
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes pulse {
+                0% { transform: scale(1); opacity: 0.3; }
+                100% { transform: scale(1.5); opacity: 1; box-shadow: 0 0 5px white; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Inicializar todo al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            setupIntersectionObserver();
+            setupInteractiveHeart();
+        });
+    </script>
+</body>
+</html>
